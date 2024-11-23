@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AdminDashboard from '../../components/AdminDashboard';
+
+const pageTitle = "Admin Dashboard - DevFest Bali 2024";
+---
+
+<Layout title={pageTitle}>
+  <AdminDashboard client:load />
+</Layout>
