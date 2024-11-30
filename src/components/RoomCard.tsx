@@ -9,7 +9,7 @@ export default function RoomCard({ room }: RoomCardProps): JSX.Element {
   const occupancyPercentage = (room.currentCapacity / room.maxCapacity) * 100;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+    <div className="bg-white rounded-lg shadow-md p-6 mb-4 border border-black">
       <h2 className="text-2xl font-bold mb-2">{room.name}</h2>
       <div className="mb-4">
         <div className="w-full bg-gray-200 rounded-full h-2.5">
