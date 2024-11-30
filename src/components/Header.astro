@@ -1,9 +1,25 @@
 ---
 import { Image } from 'astro:assets';
 import DevfestLogo from '../../public/assets/devfest24bali.png';
+
+import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import AnimatedGradientText from "@/components/ui/animated-gradient-text";
 ---
 
 <header class="w-full py-4 px-2 bg-slate-50 flex justify-between items-center">
     <Image src={DevfestLogo} alt="DevFest Bali 2024" class="lg:w-1/4 w-60" />
-    <div class="sm:block hidden px-4 lg:text-lg bg-[#ea4335] text-white rounded-full border-black border">BIM University</div>
+    <div class="sm:block hidden">
+      <AnimatedGradientText>
+        📌 <hr class="mx-2 h-4 w-px shrink-0 bg-gray-300" />{" "}
+        <span
+          class={cn(
+            `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+          )}
+        >
+          BIM University
+        </span>
+        <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+      </AnimatedGradientText>
+    </div>
 </header>
