@@ -29,6 +29,9 @@ const reviews = [
   {
     img: "/assets/sponsors/guestpro.png",
   },
+  {
+    img: "/assets/sponsors/alterstay.png",
+  },
 ];
 
 const firstRow = reviews.slice(0, reviews.length);
