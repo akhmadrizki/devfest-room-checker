@@ -2,10 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import AdminDashboard from '../../components/AdminDashboard';
 import '@/styles/global.css';
+import AdminPage from '@/components/AdminPage';
 
 const pageTitle = "Admin Dashboard - DevFest Bali 2024";
 ---
 
 <Layout title={pageTitle}>
-  <AdminDashboard client:load />
+  <AdminPage client:load />
 </Layout>

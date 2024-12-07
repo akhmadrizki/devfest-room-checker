@@ -113,6 +113,7 @@ export default function RoomSchedulesManager(): JSX.Element {
             room={room}
             scheduleComponent={(schedule) => (
               <AdminRoomSchedule
+                key={schedule.id}
                 schedule={schedule}
                 room={room}
                 onSessionClick={(scheduleId) =>
