@@ -11,6 +11,7 @@ import { db } from "../firebase/config";
 import AddRoomForm from "./AddRoomForm";
 import UpdateCapacityForm from "./UpdateCapacityForm";
 import type { Room, UpdateCapacityData } from "../types/room";
+import RoomSchedulesManager from "./AdminRoomSchedule";
 
 export default function AdminDashboard(): JSX.Element {
   const [rooms, setRooms] = useState<Room[]>([]);
@@ -47,6 +48,7 @@ export default function AdminDashboard(): JSX.Element {
         <h2 className="text-xl font-semibold mb-4">Add New Room</h2>
         <AddRoomForm />
       </div>
+      <RoomSchedulesManager />
       <div>
         <h2 className="text-xl font-semibold mb-4">Update Room Capacity</h2>
         {rooms.map((room) => (

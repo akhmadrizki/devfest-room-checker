@@ -1,0 +1,29 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import RoomList from '../components/RoomList';
+import Sponsor from '../components/Sponsor';
+import '@/styles/global.css';
+
+const pageTitle = "DevFest Bali 2024";
+
+const year = new Date().getFullYear();
+---
+
+<Layout title={pageTitle}>
+  <Header />
+  <h1 class="text-lg text-[#1e1e1e] text-center font-bold my-8 bg-[#f8d8d8] w-40 rounded-full py-3 border border-black">
+    Our Rooms
+  </h1>
+  <RoomList client:load />
+
+  <h1 class="text-lg text-[#1e1e1e] text-center font-bold my-8 bg-[#c3ecf6] w-56 rounded-full py-3 border border-black">
+    Our Amazing Sponsor
+  </h1>
+
+  <Sponsor client:load />
+
+  <footer class="text-center mt-3 text-lg text-[#1e1e1e]">
+    &copy; { year } DevFest Bali. All rights reserved.
+  </footer>
+</Layout>

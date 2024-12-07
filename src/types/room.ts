@@ -3,6 +3,8 @@ export interface Room {
   name: string;
   maxCapacity: number;
   currentCapacity: number;
+  order: number;
+  activeSessionId?: string;
 }
 
 export type RoomWithoutId = Omit<Room, "id">;
