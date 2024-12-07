@@ -33,11 +33,11 @@ export default function RoomSchedules({
                 ...doc.data(),
               }) as Schedule
           )
-          .toSorted(
-            (a, b) =>
-              Number(`${a.startTimeHours}${a.startTimeMinutes}`) -
-              Number(`${b.startTimeHours}${b.startTimeMinutes}`)
-          );
+          .toSorted((a, b) => {
+            const aTime = `${a.startTimeHours.toString().padStart(2, "0")}:${a.startTimeMinutes.toString().padStart(2, "0")}`;
+            const bTime = `${b.startTimeHours.toString().padStart(2, "0")}:${b.startTimeMinutes.toString().padStart(2, "0")}`;
+            return aTime.localeCompare(bTime);
+          });
         setSchedules(schedulesData);
       }
     );
