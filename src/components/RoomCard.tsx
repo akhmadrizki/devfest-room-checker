@@ -1,5 +1,6 @@
 import React from "react";
 import { type Room } from "../types/room";
+import RoomSchedules from "./RoomSchedules";
 
 interface RoomCardProps {
   room: Room;
@@ -37,6 +38,8 @@ export default function RoomCard({ room }: RoomCardProps): JSX.Element {
       >
         {room.currentCapacity >= room.maxCapacity ? "FULL" : "AVAILABLE"}
       </p>
+
+      <RoomSchedules className="mt-4" room={room} />
     </div>
   );
 }

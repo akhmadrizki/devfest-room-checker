@@ -19,7 +19,7 @@ export default function RoomList(): JSX.Element {
         const roomsData = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        })) as Room[];
+        }) as Room).toSorted((a, b) => a.order - b.order); 
         setRooms(roomsData);
       }
     );
